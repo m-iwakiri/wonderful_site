@@ -1,0 +1,156 @@
+html {
+  font-size: 2.08333vw;
+}
+
+@media (min-width: 961px) {
+  html {
+    font-size: 0.78125vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+ul {
+  list-style: none;
+}
+
+.inner {
+  width: 93.75vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 961px) {
+  .inner {
+    width: 93.75vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inner {
+    width: 1200px;
+  }
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+
+@media (min-width: 961px) {
+  header {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+header .header_inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2.0rem 1.5rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 961px) {
+  header .header_inner {
+    padding: 3.5rem 0;
+  }
+}
+
+header .header_inner .logo img {
+  display: block;
+  margin: 0;
+}
+
+header .header_inner .pc_navi {
+  display: none;
+}
+
+@media (min-width: 961px) {
+  header .header_inner .pc_navi {
+    display: flex;
+  }
+  header .header_inner .pc_navi ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+header .header_inner #menu_open {
+  display: block;
+  width: 5.0rem;
+  height: 4.5rem;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  position: relative;
+  background-color: #ddd;
+}
+
+@media (min-width: 961px) {
+  header .header_inner #menu_open {
+    display: none;
+  }
+}
+
+header .header_inner #menu_open span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333333;
+  margin: 0.3rem 0 0.8rem;
+}
+
+#sp_navi {
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+}
+
+@media (min-width: 961px) {
+  #sp_navi {
+    display: none;
+  }
+}
+
+#sp_navi ul {
+  margin: 1.5rem 0;
+}
+
+#sp_navi ul li a {
+  display: block;
+  padding: 2.4rem;
+  line-height: 1.0;
+}
+
+main article section#fv .upper {
+  background-image: url("../images/head_bg.jpg");
+}
+
+/*# sourceMappingURL=index.css.map */

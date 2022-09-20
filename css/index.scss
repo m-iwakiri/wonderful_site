@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+@import 'base';
+
+html{
+  @include calc-fontsize(20px, $sp-width);
+  @include tab{
+      @include calc-fontsize(10px, $pc-width);
+  }
+  @include pc{
+      font-size: 10px;
+  }
+}
+
+body{
+  font-size: 14px;
+  line-height: 1.5;
+  color: $text-color;
+  background-color: $white;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+  color: $link-color;
+}
+ul{
+  list-style: none;
+}
+
+.inner{
+  @include inner();
+}
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  @include tab{
+    background-color: rgba($white, 0.9);
+  }
+  .header_inner{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 2.0rem 1.5rem;
+    margin: 0 auto;
+    @include tab{
+      padding: 3.5rem 0;
+    }
+    .logo{
+      img{
+        display: block;
+        margin: 0;
+      }
+    }
+    .pc_navi{
+      display: none;
+      @include tab(){
+        display: flex;
+        ul{
+          display: flex;
+          justify-content: space-evenly;
+        }
+      }
+    }
+    #menu_open{
+      display: block;
+      width: 5.0rem;
+      height: 4.5rem;
+      border-radius: 0.75rem;
+      padding: 0.75rem 1.25rem;
+      position: relative;
+      background-color: $light-gray;
+      @include tab{
+        display: none;
+      }
+      span{
+        // position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $text-color;
+        margin: 0.3rem 0 0.8rem;
+      }
+    }
+  }
+}
+#sp_navi{
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: rgba($white, 0.9);
+  z-index: 999;
+  @include tab{
+    display: none;
+  }
+  ul{
+    margin: 1.5rem 0;
+    li{
+      a{
+        display: block;
+        padding: 2.4rem;
+        line-height: 1.0;
+      }
+    }
+  }
+}
+main{
+  article{
+    section{
+      &#fv{
+        .upper{
+          background-image: url('../images/head_bg.jpg');
+        }
+      }
+    }
+  }
+}
