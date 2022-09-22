@@ -1,0 +1,57 @@
+@mixin calc-fontsize($size, $displaysize) {
+    font-size: $size / $displaysize * 100vw;
+  }
+  @function calc-size($original, $displaysize, $unit:'%'){
+    @if $unit == '%'{
+        @return $original / $displaysize * 100%;
+    }
+    @else if $unit == 'vw'{
+        @return $original / $displaysize * 100vw;
+    }
+    @else{
+        @return $original / $displaysize * 1px;
+    }
+  }
+  @mixin smp {
+    @media (max-width: ($bp)) {
+        @content;
+    }
+  }
+  @mixin tab {
+    @media (min-width: ($bp + 1)) {
+        @content;
+    }
+  }
+  @mixin pc {
+    @media (min-width: ($bp-pc)) {
+        @content;
+    }
+  }
+  @mixin inner{
+    width: calc-size($sp-inner, $sp-width, 'vw');
+    margin-left: auto;
+    margin-right: auto;
+    @include tab{
+        width: calc-size($pc-inner, $pc-width, 'vw');
+    }
+    @include pc{
+        width: $pc-inner;
+    }
+  }
+  
+  $bp: 960px;
+  $bp-pc: 1200px;
+  $sp-width: 960px;
+  $sp-inner: 900px;
+  $pc-width: 1280px;
+  $pc-inner: 1200px;
+  
+  $text-color: #333333;
+  $link-color: #337ab7;
+  $marker-color: #fff100 ;
+  $white: #ffffff;
+  $black: #000000;
+  $gray: #A1A1A1;
+  $light-gray: #ddd;
+  $orange: #F5B92F;
+  $aqua: #009bcf;

@@ -1,0 +1,19 @@
+{
+  "name": "wonderful_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass css/index.scss css/index.css --watch --output-style expanded --sourceMap true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-iwakiri/wonderful_site.git"
+  },
+  "author": "m.iwakiri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-iwakiri/wonderful_site/issues"
+  },
+  "homepage": "https://github.com/m-iwakiri/wonderful_site#readme"
+}
