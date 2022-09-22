@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
-    <header>
+    <header id="header">
       <div class="header_inner">
         <div class="logo">
           <h1><img src="./images/logo.png" alt="ワンダフル・ワイフ" /></h1>
@@ -42,11 +42,11 @@
         <li><a href="#">ブログ</a></li>
       </ul>
     </div>
-    <main>
+    <main id="main_wrapper">
       <article>
         <section id="fv">
-          <div class="upper">
-            <div class="round-box">
+          <div class="upper" id="fv_upper">
+            <div class="round-box inner">
               <hgroup>
                 <h2>Wonderful Code</h2>
                 <p>ワンダフル コード</p>
@@ -68,12 +68,38 @@
             </div>
           </div>
           <div class="under">
-            <h2>-Wonderful Code-</h2>
-            <p>
-              プログラミングを体系的に学ぶことができるオンライン講座”Wonderful
-              Code(ワンダフルコード)”へようこそ。<br />
-              本講座は、人生逃げ切りサロンの価値観を学び人生を劇的に変えて、現役でプログラマーとして活躍している「金子氏・江並氏」が講師を務めるプログラミング講座です。
-            </p>
+            <div class="points">
+              <ul>
+                <li>
+                  <figure>
+                    <img src="./images/icn_beginner.svg" alt="" />
+                  </figure>
+                  <figcaption>
+                    充実した学習サポートで<br />未経験者も安心！
+                  </figcaption>
+                </li>
+                <li>
+                  <figure>
+                    <img src="./images/icn_smartphone.svg" alt="" />
+                  </figure>
+                  <figcaption>
+                    オンラインでPC、スマホで<br />いつでもどこでも学べる
+                  </figcaption>
+                </li>
+                <li>
+                  <figure><img src="./images/icn_support.svg" alt="" /></figure>
+                  <figcaption>期間無制限の永久サポート</figcaption>
+                </li>
+              </ul>
+            </div>
+            <div class="inner">
+              <h2>-Wonderful Code-</h2>
+              <p>
+                プログラミングを体系的に学ぶことができるオンライン講座”Wonderful
+                Code(ワンダフルコード)”へようこそ。<br />
+                本講座は、人生逃げ切りサロンの価値観を学び人生を劇的に変えて、現役でプログラマーとして活躍している「金子氏・江並氏」が講師を務めるプログラミング講座です。
+              </p>
+            </div>
           </div>
         </section>
         <section id="movie"></section>
@@ -101,5 +127,6 @@
         <address></address>
       </div>
     </footer>
+    <script src="./js/index.js"></script>
   </body>
 </html>

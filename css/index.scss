@@ -2,6 +2,15 @@
 
 @import 'base';
 
+@keyframes slide {
+  0% {
+    right: 0.75rem;
+  }
+  100% {
+    right: 1.25rem;
+  }
+}
+
 html{
   @include calc-fontsize(20px, $sp-width);
   @include tab{
@@ -20,6 +29,7 @@ body{
   width: 100%;
   margin: 0;
   padding: 0;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
 }
 
 a{
@@ -29,7 +39,10 @@ a{
 ul{
   list-style: none;
 }
-
+img{
+  max-width: 100%;
+  height: auto;
+}
 .inner{
   @include inner();
 }
@@ -45,6 +58,7 @@ header{
   .header_inner{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     max-width: 1200px;
     padding: 2.0rem 1.5rem;
@@ -62,9 +76,58 @@ header{
       display: none;
       @include tab(){
         display: flex;
+        align-items: center;
         ul{
           display: flex;
           justify-content: space-evenly;
+          li{
+            a{
+              padding: 1.0rem 2.5rem;
+              line-height: 1.0;
+              font-weight: bold;
+              color: $text-color;
+              @include calc-fontsize(16px, $pc-width);
+              @include pc{
+                  font-size: 16px;
+              }
+            }
+          }
+        }
+        a#contact{
+          display: block;
+          position: relative;
+          line-height: 1.0;
+          padding: 1.5rem 2.5rem;
+          margin-left: 2.0rem;
+          background-color: $orange;
+          color: $white;
+          font-weight: bold;
+          @include calc-fontsize(16px, $pc-width);
+          @include pc{
+              font-size: 16px;
+          }
+          &::after{
+            position: absolute;
+            top: 50%;
+            right: 1.0rem;
+            content: '';
+            border-right: 2px solid $white;
+            border-bottom: 2px solid $white;
+            width: 0.75em;
+            height: 0.75em;
+            transform: translateY(-50%) rotate(-45deg);
+          }
+          &:hover{
+            background-color: $gray;
+            &::after{
+              animation-name: slide;
+              animation-duration: 0.5s;
+              animation-iteration-count: infinite;
+              animation-timing-function: linear;
+              animation-fill-mode: forwards;
+              animation-direction: alternate;
+            }
+          }
         }
       }
     }
@@ -92,14 +155,21 @@ header{
 }
 #sp_navi{
   position: fixed;
-  top: 60px;
+  // top: auto;
+  top: 100vh;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 60px);
   overflow-y: auto;
   background-color: rgba($white, 0.9);
   z-index: 999;
+  transition: top .5s ease-in-out;
   @include tab{
     display: none;
+  }
+  &.open{
+    // top: 60px;
+    top: 60px;
+    transition: top .5s ease-in-out;
   }
   ul{
     margin: 1.5rem 0;
@@ -118,6 +188,164 @@ main{
       &#fv{
         .upper{
           background-image: url('../images/head_bg.jpg');
+          padding-bottom: 3.0rem;
+          @include tab{
+            padding-bottom: 24.0rem;
+          }
+          .round-box{
+            max-width: 700px;
+            margin: 3.0rem auto;
+            padding: 2.0rem;
+            background-color: $white;
+            border: 3px solid $black;
+            border-radius: 1.5rem;
+            text-align: center;
+            hgroup{
+              margin-bottom: 2.0rem;
+              h2{
+                line-height: 1.1;
+                @include calc-fontsize(56px, $sp-width);
+                @include tab{
+                    @include calc-fontsize(38px, $pc-width);
+                }
+                @include pc{
+                    font-size: 38px;
+                }
+              }
+              p{
+                @include calc-fontsize(30px, $sp-width);
+                @include tab{
+                    @include calc-fontsize(16px, $pc-width);
+                }
+                @include pc{
+                    font-size: 16px;
+                }
+              }
+            }
+            .lead{
+              p{
+                line-height: 1.8;
+                @include calc-fontsize(40px, $sp-width);
+                @include tab{
+                    @include calc-fontsize(22px, $pc-width);
+                }
+                @include pc{
+                    font-size: 22px;
+                }
+                strong{
+                  font-weight: bold;
+                  background: linear-gradient(to bottom, transparent 60%, $marker-color 60%);
+                  @include calc-fontsize(44px, $sp-width);
+                  @include tab{
+                      @include calc-fontsize(24px, $pc-width);
+                  }
+                  @include pc{
+                      font-size: 24px;
+                  }
+                }
+              }
+            }
+            a.button{
+              display: block;
+              margin: 2.0rem auto;
+              width: 100%;
+              max-width: 560px;
+              line-height: 1.0;
+              padding: 1.0em;
+              text-align: center;
+              background-color: $aqua;
+              border-radius: 0.5rem;
+              color: $white;
+              @include calc-fontsize(44px, $sp-width);
+              @include tab{
+                  @include calc-fontsize(16px, $pc-width);
+              }
+              @include pc{
+                  font-size: 16px;
+              }
+            }
+            p.notice{
+              line-height: 1.8;
+              @include calc-fontsize(30px, $sp-width);
+              @include tab{
+                  @include calc-fontsize(12px, $pc-width);
+              }
+              @include pc{
+                  font-size: 12px;
+              }
+            }
+          }
+        }
+        .under{
+          background-color: $black;
+          color: $white;
+          .points{
+            width: 60%;
+            margin: 0 auto;
+            padding: 3.0rem 0;
+            ul{
+              @include tab{
+                display: flex;
+                justify-content: space-between;
+                max-width: 800px;
+                margin: -25.0rem auto 5.0rem;
+              }
+              li{
+                text-align: center;
+                margin-bottom: 2.0rem;
+                @include tab{
+                  width: 32%;
+                  margin-bottom: 0;
+                }
+                figure{
+                  width: calc-size(510px, $sp-width, 'vw');
+                  margin: 0 auto;
+                  @include tab{
+                    width: 100%;
+                  }
+                }
+                figcaption{
+                  @include calc-fontsize(40px, $sp-width);
+                  @include tab{
+                      @include calc-fontsize(16px, $pc-width);
+                  }
+                  @include pc{
+                      font-size: 16px;
+                  }
+                }
+              }
+            }
+          }
+          .inner{
+            max-width: 800px;
+            padding-bottom: 3.0rem;
+            @include tab{
+              padding-bottom: 5.0rem;
+            }
+            h2{
+              border-bottom: 1px solid $white;
+              margin-bottom: 1.0rem;
+              text-align: center;
+              font-weight: normal;
+              @include calc-fontsize(48px, $sp-width);
+              @include tab{
+                  @include calc-fontsize(26px, $pc-width);
+              }
+              @include pc{
+                  font-size: 26px;
+              }
+            }
+            p{
+              line-height: 1.8;
+              @include calc-fontsize(39px, $sp-width);
+              @include tab{
+                  @include calc-fontsize(16px, $pc-width);
+              }
+              @include pc{
+                  font-size: 16px;
+              }
+            }
+          }
         }
       }
     }
