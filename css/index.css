@@ -1,0 +1,1799 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700&display=swap");
+@keyframes slide {
+  0% {
+    right: 0.75rem;
+  }
+  100% {
+    right: 1.25rem;
+  }
+}
+
+@keyframes slide2 {
+  0% {
+    right: 1.0rem;
+  }
+  100% {
+    right: 2.0rem;
+  }
+}
+
+html {
+  font-size: 2.08333vw;
+}
+
+@media (min-width: 961px) {
+  html {
+    font-size: 0.78125vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333333;
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.inner {
+  width: 93.75vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 961px) {
+  .inner {
+    width: 93.75vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inner {
+    width: 1200px;
+  }
+}
+
+.visible-phone {
+  display: unset;
+}
+
+@media (min-width: 961px) {
+  .visible-phone {
+    display: none;
+  }
+}
+
+.hidden-phone {
+  display: none;
+}
+
+@media (min-width: 961px) {
+  .hidden-phone {
+    display: unset;
+  }
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #ffffff;
+}
+
+@media (min-width: 961px) {
+  header {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+header .header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2.0rem 1.5rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 961px) {
+  header .header_inner {
+    padding: 3.5rem 0;
+  }
+}
+
+header .header_inner .logo img {
+  display: block;
+  margin: 0;
+}
+
+header .header_inner .pc_navi {
+  display: none;
+}
+
+@media (min-width: 961px) {
+  header .header_inner .pc_navi {
+    display: flex;
+    align-items: center;
+  }
+  header .header_inner .pc_navi ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  header .header_inner .pc_navi ul li a {
+    padding: 1.0rem 2.5rem;
+    line-height: 1.0;
+    font-weight: bold;
+    color: #333333;
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 961px) and (min-width: 1200px) {
+  header .header_inner .pc_navi ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 961px) {
+  header .header_inner .pc_navi a#contact {
+    display: block;
+    position: relative;
+    line-height: 1.0;
+    padding: 1.5rem 2.5rem;
+    margin-left: 2.0rem;
+    background-color: #F5B92F;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 961px) and (min-width: 1200px) {
+  header .header_inner .pc_navi a#contact {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 961px) {
+  header .header_inner .pc_navi a#contact::after {
+    position: absolute;
+    top: 50%;
+    right: 1.0rem;
+    content: '';
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    width: 0.75em;
+    height: 0.75em;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  header .header_inner .pc_navi a#contact:hover {
+    background-color: #A1A1A1;
+  }
+  header .header_inner .pc_navi a#contact:hover::after {
+    animation-name: slide;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+  }
+}
+
+header .header_inner #menu_open {
+  display: block;
+  width: 5.0rem;
+  height: 4.5rem;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  position: relative;
+}
+
+@media (min-width: 961px) {
+  header .header_inner #menu_open {
+    display: none;
+  }
+}
+
+header .header_inner #menu_open.open {
+  background-color: #ddd;
+}
+
+header .header_inner #menu_open span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333333;
+  margin: 0.3rem 0 0.8rem;
+}
+
+#sp_navi {
+  position: fixed;
+  top: -100vh;
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: -1;
+  transition: top .5s ease-in-out;
+}
+
+@media (min-width: 961px) {
+  #sp_navi {
+    display: none;
+  }
+}
+
+#sp_navi.open {
+  top: 60px;
+  transition: top .5s ease-in-out;
+  z-index: 999;
+}
+
+#sp_navi ul {
+  margin: 1.5rem 0;
+}
+
+#sp_navi ul li a {
+  display: block;
+  padding: 2.4rem;
+  line-height: 1.0;
+}
+
+main article section h2.lined {
+  text-align: center;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: bold;
+  background-image: url("../images/line01.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 3.8em auto;
+  padding-bottom: 0.25em;
+  margin-bottom: 2.5rem;
+  font-size: 5.83333vw;
+}
+
+@media (min-width: 961px) {
+  main article section h2.lined {
+    font-size: 2.1875vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section h2.lined {
+    font-size: 28px;
+  }
+}
+
+main article section .shadow_box {
+  background-color: #ffffff;
+  max-width: 1100px;
+  border-radius: 1.0rem;
+  padding: 2.0rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 961px) {
+  main article section .shadow_box {
+    padding: 3.0rem;
+  }
+}
+
+main article section#fv .upper {
+  background-image: url("../images/head_bg.jpg");
+  padding-bottom: 3.0rem;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .upper {
+    padding-bottom: 24.0rem;
+  }
+}
+
+main article section#fv .upper .round-box {
+  max-width: 700px;
+  margin: 3.0rem auto;
+  padding: 2.0rem;
+  background-color: #ffffff;
+  border: 3px solid #000000;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+main article section#fv .upper .round-box hgroup {
+  margin-bottom: 2.0rem;
+}
+
+main article section#fv .upper .round-box hgroup h2 {
+  line-height: 1.1;
+  font-size: 5.83333vw;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .upper .round-box hgroup h2 {
+    font-size: 2.96875vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#fv .upper .round-box hgroup h2 {
+    font-size: 38px;
+  }
+}
+
+main article section#fv .upper .round-box hgroup p {
+  font-size: 3.125vw;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .upper .round-box hgroup p {
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#fv .upper .round-box hgroup p {
+    font-size: 16px;
+  }
+}
+
+main article section#fv .upper .round-box .lead p {
+  font-size: 4.16667vw;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .upper .round-box .lead p {
+    font-size: 1.71875vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#fv .upper .round-box .lead p {
+    font-size: 22px;
+  }
+}
+
+main article section#fv .upper .round-box .lead p strong {
+  font-weight: bold;
+  background: linear-gradient(to bottom, transparent 60%, #fff100 60%);
+  font-size: 4.58333vw;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .upper .round-box .lead p strong {
+    font-size: 1.875vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#fv .upper .round-box .lead p strong {
+    font-size: 24px;
+  }
+}
+
+main article section#fv .upper .round-box a.button {
+  display: block;
+  margin: 2.0rem auto;
+  width: 100%;
+  max-width: 560px;
+  line-height: 1.0;
+  padding: 1.0em;
+  text-align: center;
+  background-color: #009bcf;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-size: 4.58333vw;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .upper .round-box a.button {
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#fv .upper .round-box a.button {
+    font-size: 16px;
+  }
+}
+
+main article section#fv .upper .round-box p.notice {
+  font-size: 3.125vw;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .upper .round-box p.notice {
+    font-size: 0.9375vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#fv .upper .round-box p.notice {
+    font-size: 12px;
+  }
+}
+
+main article section#fv .under {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+main article section#fv .under .points {
+  width: 60%;
+  margin: 0 auto;
+  padding: 3.0rem 0;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .under .points ul {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: -25.0rem auto 5.0rem;
+  }
+}
+
+main article section#fv .under .points ul li {
+  text-align: center;
+  margin-bottom: 2.0rem;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .under .points ul li {
+    width: 32%;
+    margin-bottom: 0;
+  }
+}
+
+main article section#fv .under .points ul li figure {
+  width: 53.125vw;
+  margin: 0 auto;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .under .points ul li figure {
+    width: 100%;
+  }
+}
+
+main article section#fv .under .points ul li figcaption {
+  font-size: 4.16667vw;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .under .points ul li figcaption {
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#fv .under .points ul li figcaption {
+    font-size: 16px;
+  }
+}
+
+main article section#fv .under .inner {
+  max-width: 800px;
+  padding-bottom: 3.0rem;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .under .inner {
+    padding-bottom: 5.0rem;
+  }
+}
+
+main article section#fv .under .inner h2 {
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 1.0rem;
+  text-align: center;
+  font-weight: normal;
+  font-size: 5vw;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .under .inner h2 {
+    font-size: 2.03125vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#fv .under .inner h2 {
+    font-size: 26px;
+  }
+}
+
+main article section#fv .under .inner p {
+  font-size: 4.0625vw;
+}
+
+@media (min-width: 961px) {
+  main article section#fv .under .inner p {
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#fv .under .inner p {
+    font-size: 16px;
+  }
+}
+
+main article section#movie, main article section#diagnostics {
+  padding: 3.0rem 0;
+}
+
+@media (min-width: 961px) {
+  main article section#movie, main article section#diagnostics {
+    padding: 5.0rem 0;
+  }
+}
+
+main article section#movie .movie_wrap, main article section#diagnostics .movie_wrap {
+  position: relative;
+  max-width: 800px;
+  height: 0;
+  width: 100%;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+@media (min-width: 961px) {
+  main article section#movie .movie_wrap, main article section#diagnostics .movie_wrap {
+    padding-bottom: 480px;
+    margin: 0 auto;
+  }
+}
+
+main article section#movie .movie_wrap iframe, main article section#diagnostics .movie_wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main article section#recommend {
+  background-color: #d4f1f8;
+  padding: 3.0rem 0;
+}
+
+@media (min-width: 961px) {
+  main article section#recommend {
+    padding: 5.0rem 0;
+  }
+}
+
+main article section#recommend .inner {
+  max-width: 800px;
+  background-image: url("../images/illust01_sp.png");
+  background-position: right top;
+  background-size: 40% auto;
+}
+
+@media (min-width: 961px) {
+  main article section#recommend .inner {
+    background-image: url("../images/illust01.png");
+    background-size: 37.5% auto;
+    background-position: right center;
+  }
+}
+
+main article section#recommend .inner h2 {
+  padding: 3.5rem 0;
+  font-size: 5.625vw;
+}
+
+@media (min-width: 961px) {
+  main article section#recommend .inner h2 {
+    font-size: 2.03125vw;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#recommend .inner h2 {
+    font-size: 26px;
+  }
+}
+
+main article section#recommend .inner ul li {
+  padding-left: 1.5em;
+  background-image: url("../images/check01.svg");
+  background-position: left 0.2em;
+  background-size: 1.0em;
+  margin-bottom: 0.25em;
+  font-size: 3.75vw;
+}
+
+@media (min-width: 961px) {
+  main article section#recommend .inner ul li {
+    font-size: 1.25vw;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#recommend .inner ul li {
+    font-size: 16px;
+  }
+}
+
+main article section#diagnostics .inner {
+  max-width: 800px;
+}
+
+main article section#diagnostics .inner .baloon {
+  padding: 2.5rem;
+  margin-bottom: 4.5rem;
+  background-color: #009bcf;
+  border-radius: 1.0rem;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+
+main article section#diagnostics .inner .baloon::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 20%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 2.0rem 3.0rem 0 0;
+  border-color: #009bcf transparent transparent transparent;
+}
+
+main article section#diagnostics .inner .baloon::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: calc(20% + 2.0rem);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 2.0rem 1.0rem 0 0;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+main article section#diagnostics .inner .baloon p {
+  font-weight: bold;
+  font-size: 3.54167vw;
+}
+
+@media (min-width: 961px) {
+  main article section#diagnostics .inner .baloon p {
+    font-size: 2.5vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#diagnostics .inner .baloon p {
+    font-size: 32px;
+  }
+}
+
+main article section#diagnostics .inner .baloon p:not(:last-child) {
+  margin-bottom: 1.0rem;
+}
+
+main article section#diagnostics .inner .baloon p strong {
+  color: #fff100;
+}
+
+main article section#diagnostics .inner .catch {
+  padding-top: 5.0rem;
+}
+
+@media (min-width: 961px) {
+  main article section#diagnostics .inner .catch {
+    padding-top: 7.0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 961px) {
+  main article section#diagnostics .inner .catch figure {
+    width: 37.5%;
+    margin-right: 2.5%;
+  }
+}
+
+main article section#diagnostics .inner .catch figure img {
+  width: 60%;
+  display: block;
+  margin: 0 auto 2.0rem;
+}
+
+@media (min-width: 961px) {
+  main article section#diagnostics .inner .catch figure img {
+    width: 100%;
+  }
+}
+
+main article section#diagnostics .inner .catch p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 4.58333vw;
+}
+
+@media (min-width: 961px) {
+  main article section#diagnostics .inner .catch p {
+    font-size: 1.5625vw;
+    width: 37.5%;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#diagnostics .inner .catch p {
+    font-size: 20px;
+  }
+}
+
+main article section#ruby_aws {
+  background-color: #d4f1f8;
+  padding: 3.0rem 0;
+}
+
+@media (min-width: 961px) {
+  main article section#ruby_aws {
+    padding: 5.0rem 0;
+  }
+}
+
+main article section#ruby_aws .inner h3 {
+  border: 3px solid #009bcf;
+  padding: 1.5rem 3.0rem;
+  margin: 0 0 2.0rem;
+  color: #009bcf;
+  font-weight: normal;
+}
+
+@media (min-width: 961px) {
+  main article section#ruby_aws .inner h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.0rem 4.5rem 0;
+    margin: 0 0 3.0rem;
+  }
+}
+
+main article section#ruby_aws .inner h3 .text {
+  font-size: 3.75vw;
+}
+
+@media (min-width: 961px) {
+  main article section#ruby_aws .inner h3 .text {
+    font-size: 2.03125vw;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#ruby_aws .inner h3 .text {
+    font-size: 26px;
+  }
+}
+
+main article section#ruby_aws .inner h3 figure {
+  width: 60%;
+  margin: 1.0rem auto 0;
+}
+
+@media (min-width: 961px) {
+  main article section#ruby_aws .inner h3 figure {
+    width: 40%;
+    margin-bottom: 0;
+  }
+}
+
+main article section#ruby_aws .inner h3 figure img {
+  display: block;
+  margin: 0;
+}
+
+main article section#ruby_aws .inner h3:nth-of-type(2n+1) .text {
+  order: 1;
+}
+
+@media (min-width: 961px) {
+  main article section#ruby_aws .inner h3:last-of-type {
+    padding-bottom: 3.0rem;
+  }
+}
+
+main article section#ruby_aws .inner p {
+  margin-bottom: 3.0rem;
+  font-size: 4.16667vw;
+}
+
+@media (min-width: 961px) {
+  main article section#ruby_aws .inner p {
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#ruby_aws .inner p {
+    font-size: 16px;
+  }
+}
+
+main article section.cta {
+  background-image: url("../images/bg01.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 3.0rem 0 2.0rem;
+}
+
+main article section.cta h2 {
+  color: #ffffff;
+  font-weight: normal;
+  margin-bottom: 1.0rem;
+  font-size: 4.79167vw;
+}
+
+@media (min-width: 961px) {
+  main article section.cta h2 {
+    font-size: 2.5vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section.cta h2 {
+    font-size: 32px;
+  }
+}
+
+main article section.cta a.button {
+  display: block;
+  width: 20.0em;
+  padding: 1.0em 0;
+  margin: 0 auto 1.5rem;
+  border-radius: 1.0rem;
+  line-height: 1.0em;
+  background-color: #ffffff;
+  color: #333333;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3.125vw;
+}
+
+@media (min-width: 961px) {
+  main article section.cta a.button {
+    font-size: 1.71875vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section.cta a.button {
+    font-size: 22px;
+  }
+}
+
+main article section.cta .policy {
+  margin-bottom: 1.5rem;
+  font-size: 3.125vw;
+}
+
+@media (min-width: 961px) {
+  main article section.cta .policy {
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section.cta .policy {
+    font-size: 16px;
+  }
+}
+
+main article section.cta .policy a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+main article section.cta .notice {
+  color: #ffffff;
+  font-size: 2.91667vw;
+}
+
+@media (min-width: 961px) {
+  main article section.cta .notice {
+    font-size: 1.01562vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section.cta .notice {
+    font-size: 13px;
+  }
+}
+
+main article section#teacher {
+  background-color: #d4f1f8;
+  padding: 3.0rem 0;
+}
+
+@media (min-width: 961px) {
+  main article section#teacher {
+    padding: 5.0rem 0;
+  }
+}
+
+main article section#teacher .shadow_box {
+  padding: 4.0rem;
+}
+
+main article section#teacher .shadow_box:not(:last-of-type) {
+  margin-bottom: 2.0rem;
+}
+
+@media (min-width: 961px) {
+  main article section#teacher .shadow_box:not(:last-of-type) {
+    margin-bottom: 4.0rem;
+  }
+}
+
+@media (min-width: 961px) {
+  main article section#teacher .shadow_box {
+    display: flex;
+    justify-content: space-between;
+    padding: 4.0rem 6.0rem;
+  }
+}
+
+main article section#teacher .shadow_box figure {
+  width: 68%;
+  margin: 0 auto 1.5rem;
+}
+
+@media (min-width: 961px) {
+  main article section#teacher .shadow_box figure {
+    width: 26%;
+    max-width: 257px;
+    margin: 0;
+  }
+}
+
+main article section#teacher .shadow_box figure img {
+  display: block;
+  margin: 0;
+}
+
+@media (min-width: 961px) {
+  main article section#teacher .shadow_box .text {
+    width: 70%;
+  }
+}
+
+main article section#teacher .shadow_box .text h3 {
+  text-align: center;
+  font-size: 4.16667vw;
+}
+
+@media (min-width: 961px) {
+  main article section#teacher .shadow_box .text h3 {
+    text-align: left;
+    font-size: 1.40625vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#teacher .shadow_box .text h3 {
+    font-size: 18px;
+  }
+}
+
+main article section#teacher .shadow_box .text .headline {
+  text-align: center;
+  font-size: 3.33333vw;
+}
+
+@media (min-width: 961px) {
+  main article section#teacher .shadow_box .text .headline {
+    text-align: left;
+    font-size: 1.40625vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#teacher .shadow_box .text .headline {
+    font-size: 18px;
+  }
+}
+
+main article section#teacher .shadow_box .text h4 {
+  background-color: #009bcf;
+  color: #ffffff;
+  line-height: 1.0;
+  padding: 0.5em 1.0em;
+  margin: 1.0rem 0;
+  font-size: 3.125vw;
+}
+
+@media (min-width: 961px) {
+  main article section#teacher .shadow_box .text h4 {
+    text-align: left;
+    font-size: 1.09375vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#teacher .shadow_box .text h4 {
+    font-size: 14px;
+  }
+}
+
+main article section#teacher .shadow_box .text .description {
+  font-size: 3.75vw;
+}
+
+@media (min-width: 961px) {
+  main article section#teacher .shadow_box .text .description {
+    text-align: left;
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#teacher .shadow_box .text .description {
+    font-size: 16px;
+  }
+}
+
+main article section#price {
+  padding: 3.0rem 0;
+}
+
+@media (min-width: 961px) {
+  main article section#price {
+    padding: 5.0rem 0;
+  }
+}
+
+main article section#price .round_box {
+  max-width: 800px;
+  padding: 2.5rem;
+  background-color: #131d34;
+  border-radius: 1.0rem;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+
+main article section#price .round_box h2 {
+  font-size: 5.625vw;
+}
+
+@media (min-width: 961px) {
+  main article section#price .round_box h2 {
+    font-size: 2.34375vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#price .round_box h2 {
+    font-size: 30px;
+  }
+}
+
+main article section#price .round_box p {
+  font-size: 3.95833vw;
+}
+
+@media (min-width: 961px) {
+  main article section#price .round_box p {
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#price .round_box p {
+    font-size: 16px;
+  }
+}
+
+main article section#price .round_box .price_detail {
+  padding-top: 2.0rem;
+}
+
+main article section#price .round_box .price_detail p {
+  font-size: 6.04167vw;
+}
+
+@media (min-width: 961px) {
+  main article section#price .round_box .price_detail p {
+    font-size: 2.34375vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#price .round_box .price_detail p {
+    font-size: 30px;
+  }
+}
+
+main article section#price .round_box .price_detail p:last-of-type {
+  color: #fff100;
+  line-height: 1.0;
+  font-weight: bold;
+}
+
+@media (min-width: 961px) {
+  main article section#price .round_box .price_detail p:last-of-type {
+    font-size: 3.125vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#price .round_box .price_detail p:last-of-type {
+    font-size: 40px;
+  }
+}
+
+main article section#price .round_box .price_detail p:last-of-type strong {
+  font-size: 9.16667vw;
+}
+
+@media (min-width: 961px) {
+  main article section#price .round_box .price_detail p:last-of-type strong {
+    font-size: 5.15625vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#price .round_box .price_detail p:last-of-type strong {
+    font-size: 66px;
+  }
+}
+
+main article section#price .round_box .price_detail p:last-of-type small {
+  font-size: 3.33333vw;
+}
+
+@media (min-width: 961px) {
+  main article section#price .round_box .price_detail p:last-of-type small {
+    font-size: 1.5625vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#price .round_box .price_detail p:last-of-type small {
+    font-size: 20px;
+  }
+}
+
+main article section#supoprt {
+  background-color: #d4f1f8;
+  padding: 3.0rem 0;
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt {
+    padding: 5.0rem 0;
+  }
+}
+
+main article section#supoprt figure.head {
+  margin: 0 auto;
+  width: 93.75vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt figure.head {
+    width: 93.75vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#supoprt figure.head {
+    width: 1200px;
+  }
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt figure.head {
+    max-width: 600px;
+  }
+}
+
+main article section#supoprt figure.head img {
+  display: block;
+  margin: 0;
+}
+
+main article section#supoprt ol {
+  list-style: none;
+}
+
+main article section#supoprt ol li.shadow_box {
+  padding: 4.0rem;
+}
+
+main article section#supoprt ol li.shadow_box:not(:last-of-type) {
+  margin-bottom: 2.0rem;
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt ol li.shadow_box:not(:last-of-type) {
+    margin-bottom: 4.0rem;
+  }
+}
+
+main article section#supoprt ol li.shadow_box h3 {
+  position: relative;
+  padding-left: 1.5em;
+  line-height: 1.3;
+  margin-bottom: 2.5rem;
+  font-size: 5vw;
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt ol li.shadow_box h3 {
+    font-size: 2.5vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#supoprt ol li.shadow_box h3 {
+    font-size: 32px;
+  }
+}
+
+main article section#supoprt ol li.shadow_box h3 span.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  color: #ffffff;
+  background-color: #009bcf;
+  border-radius: 0.3em;
+  line-height: 1.5;
+  font-size: 3.75vw;
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt ol li.shadow_box h3 span.icon {
+    font-size: 2.03125vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#supoprt ol li.shadow_box h3 span.icon {
+    font-size: 26px;
+  }
+}
+
+main article section#supoprt ol li.shadow_box h4 {
+  display: inline-block;
+  line-height: 1.0;
+  padding: 0.5em;
+  margin-bottom: 1.0rem;
+  border: 1px solid #2bb8d9;
+  border-radius: 0.3em;
+  color: #2bb8d9;
+  font-size: 3.33333vw;
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt ol li.shadow_box h4 {
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#supoprt ol li.shadow_box h4 {
+    font-size: 16px;
+  }
+}
+
+main article section#supoprt ol li.shadow_box ul {
+  margin: 0 0 1.5rem;
+}
+
+main article section#supoprt ol li.shadow_box ul li {
+  font-weight: bold;
+  font-size: 3.54167vw;
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt ol li.shadow_box ul li {
+    font-size: 1.875vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#supoprt ol li.shadow_box ul li {
+    font-size: 24px;
+  }
+}
+
+main article section#supoprt ol li.shadow_box p {
+  font-size: 4.375vw;
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt ol li.shadow_box p {
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#supoprt ol li.shadow_box p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt ol li.shadow_box .flex {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+main article section#supoprt ol li.shadow_box:nth-of-type(2) .flex figure {
+  width: 80%;
+  margin: 1.5rem auto 0;
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt ol li.shadow_box:nth-of-type(2) .flex figure {
+    width: 36%;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt ol li.shadow_box:nth-of-type(2) .flex .text_wrap {
+    width: 62%;
+  }
+}
+
+main article section#supoprt ol li.shadow_box:nth-of-type(4) .flex {
+  align-items: center;
+}
+
+main article section#supoprt ol li.shadow_box:nth-of-type(4) .flex figure {
+  width: 80%;
+  margin: 1.5rem auto 0;
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt ol li.shadow_box:nth-of-type(4) .flex figure {
+    width: 36%;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+@media (min-width: 961px) {
+  main article section#supoprt ol li.shadow_box:nth-of-type(4) .flex .text_wrap {
+    width: 62%;
+    order: 1;
+  }
+}
+
+main article section#notice {
+  background-color: #d4f1f8;
+  padding: 3.0rem 0;
+}
+
+@media (min-width: 961px) {
+  main article section#notice {
+    padding: 5.0rem 0;
+  }
+}
+
+main article section#notice .shadow_box {
+  padding: 4.0rem;
+}
+
+main article section#notice .shadow_box h3 {
+  margin-bottom: 0.5em;
+  font-size: 5vw;
+}
+
+@media (min-width: 961px) {
+  main article section#notice .shadow_box h3 {
+    font-size: 1.875vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#notice .shadow_box h3 {
+    font-size: 24px;
+  }
+}
+
+main article section#notice .shadow_box ul li {
+  padding-left: 1.5em;
+  background-image: url("../images/check01.svg");
+  background-position: left 0.2em;
+  background-size: 1.0em;
+  font-size: 3.75vw;
+}
+
+@media (min-width: 961px) {
+  main article section#notice .shadow_box ul li {
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#notice .shadow_box ul li {
+    font-size: 16px;
+  }
+}
+
+main article section#notice .shadow_box ul li a > strong {
+  color: #333333;
+}
+
+main article section#faq {
+  background-color: #d4f1f8;
+  padding: 3.0rem 0;
+}
+
+@media (min-width: 961px) {
+  main article section#faq {
+    padding: 5.0rem 0;
+  }
+}
+
+main article section#faq dl.shadow_box {
+  padding: 4.0rem;
+}
+
+main article section#faq dl.shadow_box:not(:last-of-type) {
+  margin-bottom: 2.0rem;
+}
+
+@media (min-width: 961px) {
+  main article section#faq dl.shadow_box:not(:last-of-type) {
+    margin-bottom: 4.0rem;
+  }
+}
+
+main article section#faq dl.shadow_box dt, main article section#faq dl.shadow_box dd {
+  position: relative;
+  padding-left: 3.0rem;
+  margin-bottom: 1.0rem;
+  font-weight: bold;
+  font-size: 3.75vw;
+}
+
+@media (min-width: 961px) {
+  main article section#faq dl.shadow_box dt, main article section#faq dl.shadow_box dd {
+    font-size: 1.40625vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#faq dl.shadow_box dt, main article section#faq dl.shadow_box dd {
+    font-size: 18px;
+  }
+}
+
+main article section#faq dl.shadow_box dt::before, main article section#faq dl.shadow_box dd::before {
+  content: 'Q';
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  color: #ffffff;
+  background-color: #009bcf;
+  border-radius: 0.3em;
+  line-height: 1.5;
+  font-size: 3.02083vw;
+}
+
+@media (min-width: 961px) {
+  main article section#faq dl.shadow_box dt::before, main article section#faq dl.shadow_box dd::before {
+    font-size: 1.09375vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#faq dl.shadow_box dt::before, main article section#faq dl.shadow_box dd::before {
+    font-size: 14px;
+  }
+}
+
+main article section#faq dl.shadow_box dd {
+  font-weight: normal;
+  font-size: 3.75vw;
+}
+
+@media (min-width: 961px) {
+  main article section#faq dl.shadow_box dd {
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  main article section#faq dl.shadow_box dd {
+    font-size: 16px;
+  }
+}
+
+main article section#faq dl.shadow_box dd::before {
+  content: 'A';
+  color: #333333;
+  background-color: #a2d729;
+  font-weight: bold;
+}
+
+footer .contact {
+  padding: 7.0rem 0;
+}
+
+@media (min-width: 961px) {
+  footer .contact {
+    padding: 10.0rem 0;
+  }
+}
+
+footer .contact h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 4.58333vw;
+}
+
+@media (min-width: 961px) {
+  footer .contact h2 {
+    font-size: 2.34375vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer .contact h2 {
+    font-size: 30px;
+  }
+}
+
+footer .contact a#foot_contact {
+  display: block;
+  position: relative;
+  width: 12.0em;
+  line-height: 1.0;
+  padding: 1.5rem 2.5rem;
+  margin: 2.0rem auto;
+  background-color: #F5B92F;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 3.75vw;
+}
+
+@media (min-width: 961px) {
+  footer .contact a#foot_contact {
+    font-size: 1.875vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer .contact a#foot_contact {
+    font-size: 24px;
+  }
+}
+
+footer .contact a#foot_contact::after {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  content: '';
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  width: 0.75em;
+  height: 0.75em;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+footer .contact a#foot_contact:hover {
+  background-color: #A1A1A1;
+}
+
+footer .contact a#foot_contact:hover::after {
+  animation-name: slide2;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
+footer .foot_navi {
+  padding: 4.0rem 0;
+}
+
+footer .foot_navi figure img {
+  display: block;
+  margin: 0 auto 2.0rem;
+}
+
+footer .foot_navi #foot_navi_menu {
+  text-align: center;
+  padding: 4.0rem 0 2.0rem;
+}
+
+footer .foot_navi #foot_navi_menu li {
+  display: inline-block;
+  margin-bottom: 1.0em;
+}
+
+footer .foot_navi #foot_navi_menu li a {
+  font-weight: bold;
+  color: #333333;
+  transition: color .3s ease-in-out;
+  padding: 0.5em 1.0em;
+  font-size: 3.75vw;
+}
+
+footer .foot_navi #foot_navi_menu li a:hover {
+  transition: color .3s ease-in-out;
+  color: #F5B92F;
+}
+
+@media (min-width: 961px) {
+  footer .foot_navi #foot_navi_menu li a {
+    padding: 0.5em 2.0em;
+    font-size: 1.25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer .foot_navi #foot_navi_menu li a {
+    font-size: 16px;
+  }
+}
+
+footer .go_top {
+  background-color: #444444;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 5.5rem;
+  height: 5.5rem;
+}
+
+@media (min-width: 961px) {
+  footer .go_top {
+    display: block;
+    position: static;
+    width: 100%;
+  }
+}
+
+footer .go_top a {
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+footer .go_top a i {
+  display: table-cell;
+  vertical-align: middle;
+  color: #ffffff;
+  font-size: 5.20833vw;
+}
+
+@media (min-width: 961px) {
+  footer .go_top a i {
+    font-size: 2.34375vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer .go_top a i {
+    font-size: 30px;
+  }
+}
+
+footer .bottom {
+  background-color: #000000;
+}
+
+footer .bottom .sns {
+  position: relative;
+}
+
+footer .bottom .sns ul {
+  text-align: right;
+  padding: 1.5rem 0;
+}
+
+@media (min-width: 961px) {
+  footer .bottom .sns ul {
+    position: absolute;
+    right: 0;
+  }
+}
+
+footer .bottom .sns ul li {
+  display: inline-block;
+  padding: 0.5rem 1.0rem;
+  font-size: 4.6875vw;
+}
+
+@media (min-width: 961px) {
+  footer .bottom .sns ul li {
+    font-size: 1.5625vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer .bottom .sns ul li {
+    font-size: 20px;
+  }
+}
+
+footer .bottom .sns ul li a {
+  color: #ddd;
+}
+
+footer .bottom address {
+  display: block;
+  padding: 1.0rem 0;
+  text-align: center;
+  color: #ffffff;
+  font-style: normal;
+  font-size: 2.5vw;
+}
+
+@media (min-width: 961px) {
+  footer .bottom address {
+    font-size: 0.9375vw;
+    padding: 3.0rem 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer .bottom address {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
