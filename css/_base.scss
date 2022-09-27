@@ -39,6 +39,10 @@
     }
   }
   
+  @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700&display=swap');
+
+  $font-zen: 'Zen Kaku Gothic New', sans-serif;
+
   $bp: 960px;
   $bp-pc: 1200px;
   $sp-width: 960px;
@@ -53,5 +57,10 @@
   $black: #000000;
   $gray: #A1A1A1;
   $light-gray: #ddd;
+  $dark-gray: #444444;
   $orange: #F5B92F;
   $aqua: #009bcf;
+  $light-blue: #2bb8d9;
+  $light-aqua: #d4f1f8;
+  $dark-navy: #131d34;
+  $green: #a2d729;
