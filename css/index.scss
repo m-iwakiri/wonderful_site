@@ -694,12 +694,302 @@ main{
         @include tab{
           padding: 5.0rem 0;
         }
+        .shadow_box{
+          padding: 4.0rem;
+          &:not(:last-of-type){
+            margin-bottom: 2.0rem;
+            @include tab{
+              margin-bottom: 4.0rem;
+            }
+          }
+          @include tab{
+            display: flex;
+            justify-content: space-between;
+            padding: 4.0rem 6.0rem;
+          }
+          figure{
+            width: 68%;
+            margin: 0 auto 1.5rem;
+            @include tab{
+              width: calc-size(286px, 1100px);
+              max-width: 257px;
+              margin: 0;
+            }
+            img{
+              display: block;
+              margin: 0;
+            }
+          }
+          .text{
+            @include tab{
+              width: calc-size(770px, 1100px);;
+            }
+            h3{
+              text-align: center;
+              @include calc-fontsize(40px, $sp-width);
+              @include tab{
+                text-align: left;
+                @include calc-fontsize(18px, $pc-width);
+              }
+              @include pc{
+                font-size: 18px;
+              }
+            }
+            .headline{
+              text-align: center;
+              @include calc-fontsize(32px, $sp-width);
+              @include tab{
+                text-align: left;
+                @include calc-fontsize(18px, $pc-width);
+              }
+              @include pc{
+                font-size: 18px;
+              }
+            }
+            h4{
+              background-color: $aqua;
+              color: $white;
+              line-height: 1.0;
+              padding: 0.5em 1.0em;
+              margin: 1.0rem 0;
+              @include calc-fontsize(30px, $sp-width);
+              @include tab{
+                text-align: left;
+                @include calc-fontsize(14px, $pc-width);
+              }
+              @include pc{
+                font-size: 14px;
+              }
+            }
+            .description{
+              @include calc-fontsize(36px, $sp-width);
+              @include tab{
+                text-align: left;
+                @include calc-fontsize(16px, $pc-width);
+              }
+              @include pc{
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+      &#price{
+        padding: 3.0rem 0;
+        @include tab{
+          padding: 5.0rem 0;
+        }
+        .round_box{
+          max-width: 800px;
+          padding: 2.5rem;
+          background-color: $dark-navy;
+          border-radius: 1.0rem;
+          text-align: center;
+          color: $white;
+          position: relative;
+          h2{
+            @include calc-fontsize(54px, $sp-width);
+            @include tab{
+                @include calc-fontsize(30px, $pc-width);
+            }
+            @include pc{
+                font-size: 30px;
+            }
+          }
+          p{
+            @include calc-fontsize(38px, $sp-width);
+            @include tab{
+                @include calc-fontsize(16px, $pc-width);
+            }
+            @include pc{
+                font-size: 16px;
+            }
+          }
+          .price_detail{
+            padding-top: 2.0rem;
+            p{
+              @include calc-fontsize(58px, $sp-width);
+              @include tab{
+                  @include calc-fontsize(30px, $pc-width);
+              }
+              @include pc{
+                  font-size: 30px;
+              }
+              &:last-of-type{
+                color: $marker-color;
+                line-height: 1.0;
+                font-weight: bold;
+                @include tab{
+                  @include calc-fontsize(40px, $pc-width);
+                }
+                @include pc{
+                    font-size: 40px;
+                }
+                strong{
+                  @include calc-fontsize(88px, $sp-width);
+                  @include tab{
+                      @include calc-fontsize(66px, $pc-width);
+                  }
+                  @include pc{
+                      font-size: 66px;
+                  }
+                }    
+                small{
+                  @include calc-fontsize(32px, $sp-width);
+                  @include tab{
+                      @include calc-fontsize(20px, $pc-width);
+                  }
+                  @include pc{
+                      font-size: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
       &#supoprt{
         background-color: $light-aqua;
         padding: 3.0rem 0;
         @include tab{
           padding: 5.0rem 0;
+        }
+        figure.head{
+          margin: 0 auto;
+          @include inner();
+          @include tab{
+            max-width: 600px;
+          }
+          img{
+            display: block;
+            margin: 0;
+          }
+        }
+        ol{
+          list-style: none;
+          li.shadow_box{
+            padding: 4.0rem;
+            &:not(:last-of-type){
+              margin-bottom: 2.0rem;
+              @include tab{
+                margin-bottom: 4.0rem;
+              }
+            }
+            h3{
+              position: relative;
+              padding-left: 1.5em;
+              line-height: 1.3;
+              margin-bottom: 2.5rem;
+              @include calc-fontsize(48px, $sp-width);
+              @include tab{
+                  @include calc-fontsize(32px, $pc-width);
+              }
+              @include pc{
+                  font-size: 32px;
+              }
+              span.icon{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1.5em;
+                height: 1.5em;
+                text-align: center;
+                color: $white;
+                background-color: $aqua;
+                border-radius: 0.3em;
+                line-height: 1.5;
+                @include calc-fontsize(36px, $sp-width);
+                @include tab{
+                    @include calc-fontsize(26px, $pc-width);
+                }
+                @include pc{
+                    font-size: 26px;
+                }
+              }
+            }
+            h4{
+              display: inline-block;
+              line-height: 1.0;
+              padding: 0.5em;
+              margin-bottom: 1.0rem;
+              border: 1px solid $light-blue;
+              border-radius: 0.3em;
+              color: $light-blue;
+              @include calc-fontsize(32px, $sp-width);
+              @include tab{
+                  @include calc-fontsize(16px, $pc-width);
+              }
+              @include pc{
+                  font-size: 16px;
+              }
+            }
+            ul{
+              margin: 0 0 1.5rem;
+              li{
+                font-weight: bold;
+                @include calc-fontsize(34px, $sp-width);
+                @include tab{
+                    @include calc-fontsize(24px, $pc-width);
+                }
+                @include pc{
+                    font-size: 24px;
+                }
+              }
+            }
+            p{
+              @include calc-fontsize(42px, $sp-width);
+              @include tab{
+                  @include calc-fontsize(16px, $pc-width);
+              }
+              @include pc{
+                  font-size: 16px;
+              }
+            }
+            .flex{
+              @include tab{
+                display: flex;
+                justify-content: space-between;
+              }
+            }
+            &:nth-of-type(2){
+              .flex{
+                figure{
+                  width: 80%;
+                  margin: 1.5rem auto 0;
+                  @include tab{
+                    width: 36%;
+                    margin: 0;
+                    text-align: center;
+                  }
+                }
+                .text_wrap{
+                  @include tab{
+                    width: 62%;
+                  }
+                }
+              }
+            }
+            &:nth-of-type(4){
+              .flex{
+                align-items: center;
+                figure{
+                  width: 80%;
+                  margin: 1.5rem auto 0;
+                  @include tab{
+                    width: 36%;
+                    margin: 0;
+                    text-align: left;
+                  }
+                }
+                .text_wrap{
+                  @include tab{
+                    width: 62%;
+                    order: 1;
+                  }
+                }
+              }
+            }
+          }
         }
       }
       &#notice{
@@ -708,12 +998,103 @@ main{
         @include tab{
           padding: 5.0rem 0;
         }
+        .shadow_box{
+          padding: 4.0rem;
+          h3{
+            margin-bottom: 0.5em;
+            @include calc-fontsize(48px, $sp-width);
+            @include tab{
+                @include calc-fontsize(24px, $pc-width);
+            }
+            @include pc{
+                font-size: 24px;
+            }
+          }
+          ul{
+            li{
+              padding-left: 1.5em;
+              background-image: url('../images/check01.svg');
+              background-position: left 0.2em;
+              background-size: 1.0em;
+              @include calc-fontsize(36px, $sp-width);
+              @include tab{
+                  @include calc-fontsize(16px, $pc-width);
+              }
+              @include pc{
+                  font-size: 16px;
+              }
+    
+              a > strong{
+                color: $text-color;
+              }
+            }
+          }
+        }
       }
       &#faq{
         background-color: $light-aqua;
         padding: 3.0rem 0;
         @include tab{
           padding: 5.0rem 0;
+        }
+        dl.shadow_box{
+          padding: 4.0rem;
+          &:not(:last-of-type){
+            margin-bottom: 2.0rem;
+            @include tab{
+              margin-bottom: 4.0rem;
+            }
+          }
+          dt,dd{
+            position: relative;
+            padding-left: 3.0rem;
+            margin-bottom: 1.0rem;
+            // line-height: 1.3;
+            font-weight: bold;
+            @include calc-fontsize(36px, $sp-width);
+            @include tab{
+              @include calc-fontsize(18px, $pc-width);
+            }
+            @include pc{
+              font-size: 18px;
+            }
+            &::before{
+              content: 'Q';
+              position: absolute;
+              top: 0.2em;
+              left: 0;
+              width: 1.5em;
+              height: 1.5em;
+              text-align: center;
+              color: $white;
+              background-color: $aqua;
+              border-radius: 0.3em;
+              line-height: 1.5;
+              @include calc-fontsize(29px, $sp-width);
+              @include tab{
+                  @include calc-fontsize(14px, $pc-width);
+              }
+              @include pc{
+                  font-size: 14px;
+              }
+            }
+          }
+          dd{
+            font-weight: normal;
+            @include calc-fontsize(36px, $sp-width);
+            @include tab{
+              @include calc-fontsize(16px, $pc-width);
+            }
+            @include pc{
+              font-size: 16px;
+            }
+            &::before{
+              content: 'A';
+              color: $text-color;
+              background-color: $green;
+              font-weight: bold;
+            }
+          }
         }
       }
     }
@@ -723,10 +1104,6 @@ main{
 
 footer{
   .contact{
-    // background-image: url('../images/contact_bg.jpg');
-    // background-position: center top;
-    // background-size: cover;
-    // background-attachment: fixed;
     padding: 7.0rem 0;
     @include tab{
       padding: 10.0rem 0;
